@@ -31,7 +31,6 @@ const NAV = [
   { label: "Problems", href: "#problems" },
   { label: "Rules", href: "#rules" },
   { label: "Timeline", href: "#timeline" },
-  { label: "Prizes", href: "#prizes" },
 ];
 
 const RULES = [
@@ -560,42 +559,6 @@ function Index() {
                 </Reveal>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* PRIZES */}
-      <section id="prizes" className="relative px-5 py-28">
-        <div aria-hidden className="orb h-[28rem] w-[28rem] top-0 right-0" style={{ background: "var(--cyan)", opacity: 0.18 }} />
-        <div className="relative mx-auto max-w-6xl">
-          <Reveal>
-            <SectionLabel>Prizes &amp; Recognition</SectionLabel>
-            <h2 className="mt-6 text-3xl font-bold sm:text-5xl">
-              Rewarded for what you <span className="text-gradient">anticipated</span>.
-            </h2>
-          </Reveal>
-
-          <div className="mt-14 grid items-center gap-6 md:grid-cols-3">
-            {PRIZES.map((p, i) => (
-              <Reveal key={p.rank} delay={i * 90}>
-                <div
-                  className={`glass glass-hover rounded-3xl p-8 text-center ${
-                    p.featured ? "md:-translate-y-6 md:py-12" : ""
-                  }`}
-                  style={p.featured ? { boxShadow: "var(--glow-neon)" } : undefined}
-                >
-                  <div className="text-xs tracking-[0.22em] text-muted-foreground uppercase">{p.rank}</div>
-                  <div className="font-display text-gradient mt-4 text-3xl font-bold sm:text-4xl">
-                    {p.amount}
-                  </div>
-                  <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-                    {p.perks.map((perk) => (
-                      <li key={perk}>{perk}</li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
           </div>
         </div>
       </section>
