@@ -203,7 +203,7 @@ function Nav() {
         </div>
 
         <div className="flex items-center gap-2">
-          <a href="#register" className="btn-primary hidden rounded-full px-5 py-2 text-sm sm:inline-block">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfT56rOasmwIhuhehfhPXnwRrk_BD-Hht5E5YmREN3ef_hQNw/viewform?usp=sharing&ouid=109236939160750032323" className="btn-primary hidden rounded-full px-5 py-2 text-sm sm:inline-block">
             Register
           </a>
           <button
@@ -230,7 +230,7 @@ function Nav() {
               </a>
             ))}
             <a
-              href="#register"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfT56rOasmwIhuhehfhPXnwRrk_BD-Hht5E5YmREN3ef_hQNw/viewform?usp=sharing&ouid=109236939160750032323"
               onClick={() => setOpen(false)}
               className="btn-primary mt-2 rounded-full px-5 py-3 text-center text-sm"
             >
@@ -614,7 +614,7 @@ function Index() {
                   (placeholder). Registration closes once slots are filled.
                 </p>
                 <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                  <a href="#register" className="btn-primary w-full rounded-full px-9 py-4 text-sm sm:w-auto">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfT56rOasmwIhuhehfhPXnwRrk_BD-Hht5E5YmREN3ef_hQNw/viewform?usp=sharing&ouid=109236939160750032323" className="btn-primary w-full rounded-full px-9 py-4 text-sm sm:w-auto">
                     Register Now
                   </a>
                   <a href="#rules" className="btn-ghost w-full rounded-full px-9 py-4 text-sm sm:w-auto">
@@ -624,7 +624,7 @@ function Index() {
                 <div className="mt-8 grid gap-3 text-sm text-muted-foreground sm:grid-cols-3">
                   <div className="rounded-2xl border border-border px-4 py-3">Team size: 2–3</div>
                   <div className="rounded-2xl border border-border px-4 py-3">Entry: ₹150</div>
-                  <div className="rounded-2xl border border-border px-4 py-3">Mode: TBA</div>
+                  <div className="rounded-2xl border border-border px-4 py-3">Mode: Offline</div>
                 </div>
               </div>
             </div>
@@ -655,22 +655,6 @@ function Index() {
             </div>
           </div>
 
-          <div>
-            <h3 className="text-sm font-semibold tracking-[0.18em] uppercase">Connect</h3>
-            <p className="mt-4 text-sm text-muted-foreground">contact@appathon.example</p>
-            <div className="mt-4 flex gap-3">
-              {["Instagram", "LinkedIn", "X", "GitHub"].map((s) => (
-                <a
-                  key={s}
-                  href="#top"
-                  aria-label={s}
-                  className="btn-ghost rounded-full px-3 py-2 text-xs text-muted-foreground"
-                >
-                  {s[0]}
-                </a>
-              ))}
-            </div>
-          </div>
         </div>
 
         <div className="mx-auto mt-12 max-w-6xl border-t border-border pt-6 text-center text-xs text-muted-foreground">
