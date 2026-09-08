@@ -32,7 +32,6 @@ const NAV = [
   { label: "Rules", href: "#rules" },
   { label: "Timeline", href: "#timeline" },
   { label: "Prizes", href: "#prizes" },
-  { label: "FAQ", href: "#faq" },
 ];
 
 const RULES = [
