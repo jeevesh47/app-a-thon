@@ -203,7 +203,7 @@ function Nav() {
         </div>
 
         <div className="flex items-center gap-2">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfT56rOasmwIhuhehfhPXnwRrk_BD-Hht5E5YmREN3ef_hQNw/viewform?usp=sharing&ouid=109236939160750032323" className="btn-primary hidden rounded-full px-5 py-2 text-sm sm:inline-block">
+          <a onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfT56rOasmwIhuhehfhPXnwRrk_BD-Hht5E5YmREN3ef_hQNw/viewform?usp=sharing&ouid=109236939160750032323https://docs.google.com/forms/d/e/1FAIpQLSfT56rOasmwIhuhehfhPXnwRrk_BD-Hht5E5YmREN3ef_hQNw/viewform?usp=sharing&ouid=109236939160750032323", "_blank", "noopener,noreferrer")} className="btn-primary hidden rounded-full px-5 py-2 text-sm sm:inline-block">
             Register
           </a>
           <button
@@ -614,7 +614,7 @@ function Index() {
                   (placeholder). Registration closes once slots are filled.
                 </p>
                 <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfT56rOasmwIhuhehfhPXnwRrk_BD-Hht5E5YmREN3ef_hQNw/viewform?usp=sharing&ouid=109236939160750032323" className="btn-primary w-full rounded-full px-9 py-4 text-sm sm:w-auto">
+                  <a onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLSfT56rOasmwIhuhehfhPXnwRrk_BD-Hht5E5YmREN3ef_hQNw/viewform?usp=sharing&ouid=109236939160750032323https://docs.google.com/forms/d/e/1FAIpQLSfT56rOasmwIhuhehfhPXnwRrk_BD-Hht5E5YmREN3ef_hQNw/viewform?usp=sharing&ouid=109236939160750032323", "_blank", "noopener,noreferrer")} className="btn-primary w-full rounded-full px-9 py-4 text-sm sm:w-auto">
                     Register Now
                   </a>
                   <a href="#rules" className="btn-ghost w-full rounded-full px-9 py-4 text-sm sm:w-auto">
