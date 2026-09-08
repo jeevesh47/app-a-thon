@@ -1,0 +1,207 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-neon: var(--neon);
+  --color-cyan: var(--cyan);
+  --color-teal: var(--teal);
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.875rem;
+
+  /* Neon Grid Lab */
+  --background: oklch(0.155 0.012 165);
+  --foreground: oklch(0.97 0.008 160);
+  --card: oklch(0.203 0.014 168);
+  --card-foreground: oklch(0.97 0.008 160);
+  --popover: oklch(0.203 0.014 168);
+  --popover-foreground: oklch(0.97 0.008 160);
+  --primary: oklch(0.87 0.24 160);
+  --primary-foreground: oklch(0.15 0.012 165);
+  --secondary: oklch(0.25 0.018 175);
+  --secondary-foreground: oklch(0.97 0.008 160);
+  --muted: oklch(0.25 0.018 175);
+  --muted-foreground: oklch(0.73 0.02 172);
+  --accent: oklch(0.85 0.13 195);
+  --accent-foreground: oklch(0.15 0.012 165);
+  --destructive: oklch(0.63 0.24 25);
+  --destructive-foreground: oklch(0.97 0.008 160);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.87 0.24 160);
+
+  --neon: oklch(0.87 0.24 160);
+  --cyan: oklch(0.85 0.13 195);
+  --teal: oklch(0.66 0.09 190);
+
+  --gradient-brand: linear-gradient(100deg, var(--neon), var(--cyan) 90%);
+  --glow-neon: 0 0 44px -10px color-mix(in oklab, var(--neon) 70%, transparent);
+  --glow-cyan: 0 0 44px -10px color-mix(in oklab, var(--cyan) 60%, transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+}
+
+@utility text-gradient {
+  background-image: var(--gradient-brand);
+  background-clip: text;
+  color: transparent;
+}
+
+@utility glass {
+  background: color-mix(in oklab, var(--card) 55%, transparent);
+  border: 1px solid color-mix(in oklab, white 9%, transparent);
+  backdrop-filter: blur(14px) saturate(130%);
+}
+
+@utility glass-hover {
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+  &:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--neon) 55%, transparent);
+    box-shadow: var(--glow-neon);
+    background: color-mix(in oklab, var(--neon) 5%, color-mix(in oklab, var(--card) 55%, transparent));
+  }
+}
+
+@utility btn-primary {
+  background-image: var(--gradient-brand);
+  color: oklch(0.15 0.012 165);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: var(--glow-neon);
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+  &:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+    box-shadow: 0 0 60px -8px color-mix(in oklab, var(--neon) 85%, transparent);
+  }
+}
+
+@utility btn-ghost {
+  border: 1px solid color-mix(in oklab, var(--neon) 28%, transparent);
+  background: color-mix(in oklab, var(--neon) 5%, transparent);
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  &:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--neon) 65%, transparent);
+    background: color-mix(in oklab, var(--neon) 10%, transparent);
+    box-shadow: var(--glow-neon);
+  }
+}
+
+@keyframes grid-pan {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: 0 64px, 64px 0; }
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(to bottom, color-mix(in oklab, var(--neon) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(to right, color-mix(in oklab, var(--neon) 12%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 85% 65% at 50% 10%, black 20%, transparent 78%);
+  animation: grid-pan 14s linear infinite;
+}
+
+@utility grid-bg-soft {
+  background-image:
+    linear-gradient(to bottom, color-mix(in oklab, var(--neon) 7%, transparent) 1px, transparent 1px),
+    linear-gradient(to right, color-mix(in oklab, var(--neon) 7%, transparent) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 0%, transparent 75%);
+}
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  &[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+
+@keyframes drift {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(30px, -40px, 0) scale(1.15); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@utility orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(100px);
+  opacity: 0.35;
+  animation: drift 18s ease-in-out infinite;
+}
+
+@utility floaty {
+  animation: float-y 7s ease-in-out infinite;
+}
+
+@utility neon-ring {
+  box-shadow: var(--glow-neon);
+}
